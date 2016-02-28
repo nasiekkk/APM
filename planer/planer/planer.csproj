@@ -67,6 +67,8 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Order.cs" />
+    <Compile Include="OrderItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>

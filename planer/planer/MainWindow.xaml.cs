@@ -29,5 +29,21 @@ namespace planer
         {
             MessageBox.Show("OK");
         }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            orders.Items.Add
+                (
+                new Order
+                {
+                    OrderDate = DateTime.Now,
+                    Items = new List<OrderItem>{
+                        new OrderItem {Amount = 1, Width = 10, Length = 20},
+                        new OrderItem {Amount = 2, Width = 10, Length = 20},
+                        new OrderItem {Amount = 3, Width = 10, Length = 20},
+                    }
+                }
+                );
+        }
     }
 }
