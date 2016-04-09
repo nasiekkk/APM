@@ -14,9 +14,6 @@
         <DockPanel Grid.Row="0" LastChildFill="True">
             <Label Content="Existing Orders" HorizontalAlignment="Left" VerticalAlignment="Top" DockPanel.Dock="Top"/>
             <DataGrid Name="orders" HorizontalAlignment="Stretch" VerticalAlignment="Top" AutoGenerateColumns="True">
-                <DataGrid.Columns>
-                    <DataGridTextColumn Binding="{Binding OrderDate}"/>
-                </DataGrid.Columns>
             </DataGrid>
         </DockPanel>
 
@@ -24,10 +21,23 @@
             <Label Content="Order Items" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Row="1" DockPanel.Dock="Top"/>
             <DataGrid HorizontalAlignment="Stretch" VerticalAlignment="Top" Grid.Row="1"/>
         </DockPanel>
-        <DockPanel Grid.Row="2" Margin="20">
-            <Button Content="Add Order" VerticalAlignment="Center" HorizontalAlignment="Left" Height="60" Width="115"  Click="Button_Click_1" Grid.Row="2"/>
-            <Button Content="Modify Order" VerticalAlignment="Center" HorizontalAlignment="Right" Height="60" Width="115" Grid.Row="2" />
-        </DockPanel>
+        <Grid Grid.Row="2" Margin="20">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width ="*">
+                </ColumnDefinition>
+                <ColumnDefinition Width ="auto">
+                </ColumnDefinition>
+                <ColumnDefinition Width ="*">
+                </ColumnDefinition>
+                <ColumnDefinition Width ="auto">
+                </ColumnDefinition>
+                <ColumnDefinition Width ="*">
+                </ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Button Content="Add Order" VerticalAlignment="Center" HorizontalAlignment="Left" Height="60" Width="115"  Click="Button_Click_1" Grid.Row="2" Grid.Column="0"/>
+            <Button Content="Modify Order" VerticalAlignment="Center" HorizontalAlignment="Center" Height="60" Width="115" Grid.Row="2" Grid.Column="2"/>
+            <Button Content="Calculate" Height="60" Width="115" VerticalAlignment="Center" HorizontalAlignment="Right" Click="Button_Click_2" Grid.Row="2" Grid.Column="5"/>
+        </Grid>
     </Grid>
 
 </Window>
