@@ -7,7 +7,7 @@
     <ProjectGuid>{EF3E0281-8F97-41CD-BEA8-49DCB5E4D449}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>planer</RootNamespace>
+    <RootNamespace>Planer</RootNamespace>
     <AssemblyName>planer</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
@@ -68,6 +68,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="MainWindowVM.cs" />
+    <Compile Include="MVVM_Core\ObservableObject.cs" />
+    <Compile Include="MVVM_Core\RelayCommand.cs" />
     <Compile Include="Order.cs" />
     <Compile Include="OrderItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">

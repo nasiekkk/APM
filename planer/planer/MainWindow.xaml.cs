@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace planer
+namespace Planer
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
@@ -24,7 +24,7 @@ namespace planer
         {
             InitializeComponent();
         }
-
+/*
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             MessageBox.Show("OK");
@@ -50,5 +50,6 @@ namespace planer
         {
 
         }
+ * */
     }
 }

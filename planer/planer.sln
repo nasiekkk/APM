@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "planer", "planer\planer.csproj", "{EF3E0281-8F97-41CD-BEA8-49DCB5E4D449}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Planer", "planer\Planer.csproj", "{EF3E0281-8F97-41CD-BEA8-49DCB5E4D449}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
