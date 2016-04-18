@@ -19,13 +19,18 @@
         <DockPanel Grid.Row="0" LastChildFill="True">
             <Label Content="Existing Orders" HorizontalAlignment="Left" VerticalAlignment="Top" DockPanel.Dock="Top"/>
             <Label Content="{Binding Amount}" HorizontalAlignment="Left" VerticalAlignment="Top" DockPanel.Dock="Top"/>
-            <DataGrid Name="orders" HorizontalAlignment="Stretch" VerticalAlignment="Top" AutoGenerateColumns="True">
+            <DataGrid HorizontalAlignment="Stretch" VerticalAlignment="Top" AutoGenerateColumns="True" ItemsSource="{Binding Orders}" SelectedItem="{Binding SelectedOrder}">
+                <!--<DataGrid.Columns>
+                    <DataGridTextColumn Binding="{Binding Orders.OrderDate}" />
+                    <DataGridTextColumn Binding="{Binding Orders.Items}" />
+                </DataGrid.Columns>-->
             </DataGrid>
         </DockPanel>
 
         <DockPanel Grid.Row="1" LastChildFill="True">
             <Label Content="Order Items" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Row="1" DockPanel.Dock="Top"/>
-            <DataGrid HorizontalAlignment="Stretch" VerticalAlignment="Top" Grid.Row="1"/>
+            <DataGrid  HorizontalAlignment="Stretch" VerticalAlignment="Top" Grid.Row="1" ItemsSource="{Binding SelectedOrder.Items}">
+            </DataGrid>
         </DockPanel>
         <Grid Grid.Row="2" Margin="20">
             <Grid.ColumnDefinitions>
@@ -40,7 +45,7 @@
                 <ColumnDefinition Width ="*">
                 </ColumnDefinition>
             </Grid.ColumnDefinitions>
-            <Button Content="Add Order" VerticalAlignment="Center" HorizontalAlignment="Left" Height="60" Width="115" Grid.Row="2" Grid.Column="0"/>
+            <Button Content="Add Order" VerticalAlignment="Center" HorizontalAlignment="Left" Height="60" Width="115" Grid.Row="2" Grid.Column="0" Command="{Binding AddOrderCommand}"/>
             <Button Content="Modify Order" VerticalAlignment="Center" HorizontalAlignment="Center" Height="60" Width="115" Grid.Row="2" Grid.Column="2"/>
             <Button Content="Calculate" Height="60" Width="115" VerticalAlignment="Center" HorizontalAlignment="Right" Grid.Row="2" Grid.Column="5"/>
         </Grid>
