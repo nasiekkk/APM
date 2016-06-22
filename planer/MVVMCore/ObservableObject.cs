@@ -3,7 +3,7 @@ using System.ComponentModel;
 using System.Diagnostics;
 using System.Linq.Expressions;
 
-namespace Planer.MVVM_Core
+namespace MVVMCore
 {
     public abstract class ObservableObject : INotifyPropertyChanged
     {

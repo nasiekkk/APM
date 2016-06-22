@@ -2,7 +2,7 @@
 using System.Diagnostics;
 using System.Windows.Input;
 
-namespace Planer.MVVM_Core
+namespace MVVMCore
 {
 
     /// <summary>
@@ -51,7 +51,6 @@ namespace Planer.MVVM_Core
         {
             add
             {
-
                 if (_canExecute != null)
                     CommandManager.RequerySuggested += value;
             }
