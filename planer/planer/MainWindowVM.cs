@@ -25,10 +25,44 @@ namespace Planer
             }
          
         }
-        
+
+        #region Commands
+
         public ICommand AddOrderCommand { get; set; }
         public ICommand ModifyOrderCommand { get; set; }
         public ICommand CalculateOrderCommand { get; set; }
+
+        #endregion
+
+        #region Commands handlers
+
+        private void CalculateExcute()
+        {
+            
+        }
+
+        private bool ModifyOrderCanExecute()
+        {
+            return SelectedOrder != null;
+        }
+
+        private void ModifyOrderExecute()
+        {
+            if (!ModifyOrderCanExecute())
+                return;
+
+            Orders.Remove(SelectedOrder);
+            Orders.Add(new Order(4));
+            
+        }
+
+        private void AddOrderExecute()
+        {
+            Orders.Add(new Order());
+        }
+
+        #endregion
+
         private Order _selectedOrder;
         public Order SelectedOrder
         {
@@ -66,26 +100,9 @@ namespace Planer
                     }
                 }
             };
-            AddOrderCommand = new RelayCommand(
-                () => 
-                { 
-                    Orders.Add(new Order());
-                }
-            );
-
-            ModifyOrderCommand = new RelayCommand(
-                () => 
-                {
-                    Orders.Remove(SelectedOrder);
-                    Orders.Add(new Order(4));
-                }
-            );
-
-            CalculateOrderCommand = new RelayCommand(
-                () =>
-                {
-
-                });
+            AddOrderCommand = new RelayCommand(AddOrderExecute);
+            ModifyOrderCommand = new RelayCommand(ModifyOrderExecute, ModifyOrderCanExecute);
+            CalculateOrderCommand = new RelayCommand(CalculateExcute);
         }
     }
 }
